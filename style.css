@@ -1,89 +1,108 @@
 :root {
-    --bg-color: #c39358;
-    --text-color: #463724;
-    --light-text-color: #ffe4c4;
-    --heading-text: #221222;
-    --font-size: 1.2em
-  }
+  --bg-color: #c39358;
+  --text-color: #463724;
+  --light-text-color: #ffe4c4;
+  --heading-text: #221222;
+  --font-size: 1.2em;
+}
 *:focus {
-    outline: none;
+  outline: none;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
 
 #container {
-    text-align: center;
-    background-color: var(--bg-color);
-    max-width: 30em;
-    margin: 30vh auto;
-    min-height: 25em; 
+  text-align: center;
+  background-color: var(--bg-color);
+  max-width: 30em;
+  margin: 30vh auto;
+  min-height: 25em;
 }
 
-h1{
-    font-size: 4em;
-    color: var(--text-color);
+h1 {
+  font-size: 4em;
+  color: var(--text-color);
 }
-.input-area{ 
-   max-width: 20em;
-   margin: 0 auto;
-}
-
-.input-todo{
-    background-color: #5d4c2e;
-    padding: 0.5em;
-    border: none;
-    border-radius: 0.2em;
-    max-width: 11.2em;
-    font-size: var(--font-size);
-    color: var(--light-text-color);
+.input-area {
+  max-width: 20em;
+  margin: 0 auto;
 }
 
-.plus , button{
-    font-size: var(--font-size);
-    padding: 0.5em;
-    border: none;
-    color: var(--text-color);
-    background-color:var(--light-text-color);
-    border-radius: 0.2em;
-    max-width: 2em;
-    cursor: pointer;
+.input-todo {
+  background-color: #5d4c2e;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.2em;
+  max-width: 11.2em;
+  font-size: var(--font-size);
+  color: var(--light-text-color);
 }
 
-.outputResult{
-    padding: 0.5em;
-    max-width: 16em;
-    margin: auto;
-    margin-top: 1em;
+.plus,
+button {
+  font-size: var(--font-size);
+  padding: 0.5em;
+  border: none;
+  color: var(--text-color);
+  background-color: var(--light-text-color);
+  border-radius: 0.2em;
+  max-width: 2em;
+  cursor: pointer;
 }
 
-.pendingTaskCount{
-    font-size: 1.25em;
-    color:#5d4c2e;
-    font-weight: bold;
-    text-decoration:underline;
+
+
+.outputResult {
+  padding: 0.5em;
+  max-width: 16em;
+  margin: auto;
+  margin-top: 1em;
 }
 
+.pendingTaskCount {
+  font-size: 1.25em;
+  color: #5d4c2e;
+  font-weight: bold;
+  text-decoration: underline;
+}
 
 li {
-    list-style: none ;
-    font-size: 1.2em;
-    background-color: var(--light-text-color);
-    padding: 0.5em;
-    margin: 0 auto;
-    margin-top: 0.5em;
-    border-radius: 0.2em;
-    text-align: left;
-    border: none;
-    color: var(--text-color);
-    max-width: 13em;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 1.2em;
+  background-color: var(--light-text-color);
+  padding: 0.5em;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  border-radius: 0.2em;
+  text-align: left;
+  border: none;
+  color: var(--text-color);
+  max-width: 13em;
 }
 
-button{
-    max-width: 10em;
-    margin-top: 0.5em;
+button {
+  max-width: 10em;
+  margin-top: 0.5em;
+}
+
+.delete {
+  cursor: pointer;
+  visibility: hidden;
+}
+
+li:hover .delete {
+  visibility: visible;
+}
+
+.plus{
+    
+    pointer-events: none;
+    opacity: 1;
 }
