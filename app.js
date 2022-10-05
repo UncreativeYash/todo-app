@@ -13,10 +13,6 @@ div.innerHTML = `
 
 <ul class="list">
 
-<li>Lorem ipsum dolor sit.<img class="delete" src="./images/delete.svg" alt="" srcset="" ></li>
-<li>Lorem ipsum dolor sit.<img class="delete" src="./images/delete.svg" alt="" srcset="" ></li>
-<li>Lorem ipsum dolor sit.<img class="delete" src="./images/delete.svg" alt="" srcset="" ></li>
-<li>Lorem ipsum dolor sit.<img class="delete" src="./images/delete.svg" alt="" srcset="" ></li>
 
 </ul>
 </div>
@@ -38,7 +34,7 @@ let todoList = document.querySelector(".list");
 let clearAll = document.querySelector(".outputResult button");
 let deleteBtn = document.querySelector(".delete");
 
-inputTodo.onkeyup = () => {
+inputTodo.addEventListener("keyup", () => {
   let activePointer = `
     opacity: 1;
     pointer-events: auto;
@@ -47,10 +43,34 @@ inputTodo.onkeyup = () => {
     opacity: 0.5;
     pointer-events: none;
     `;
-    
+
   if (inputTodo.value.trim() != 0) {
     plusBtn.style.cssText = activePointer;
   } else {
     plusBtn.style.cssText = removePointer;
   }
-};
+});
+
+// on click add tasks to todo list
+
+plusBtn.addEventListener("click", () => {
+  let getLS = localStorage.getItem("New Todo");
+  if (getLS === null) {
+    listArr = [];
+  } else {
+    listArr = JSON.parse(getLS);
+  }
+
+  listArr.push(inputTodo.value);
+  localStorage.setItem("New Todo", JSON.stringify(listArr));
+
+  let newLiTag = "";
+  listArr.forEach((element) => {
+    newLiTag += `<li> ${element} <img class="delete" src="./images/delete.svg" ></li>`;
+  });
+
+  todoList.innerHTML = newLiTag;
+
+  //   input filed empty ater adding tasks
+  inputTodo.value = ""
+});
