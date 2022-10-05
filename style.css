@@ -1,0 +1,64 @@
+:root {
+    --bg-color: #ffe4c4;
+    --text-color: #463724;
+    --light-text-color:#ffe4c4;
+    --heading-text: #221222;
+    --font-size: 1.2em
+  }
+*:focus {
+    outline: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+#container {
+    text-align: center;
+    background-color: var(--bg-color);
+    max-width: 48em;
+    margin: 30vh auto;
+}
+
+h1{
+    font-size: 4em;
+    color: var(--text-color);
+}
+.input-area{
+   border: 1px solid ;
+   min-height: 150px;  
+   margin: 20;
+   max-width: 350px;
+   margin: 0 auto;
+}
+
+.input-todo{
+    background-color: #5d4c2e;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.2em;
+    font-size: var(--font-size);
+    color: var(--light-text-color);
+}
+
+.plus {
+    font-size: var(--font-size);
+    padding: 0.5em;
+    border: none;
+    color: var(--text-color);
+    background-color: burlywood;
+    border-radius: 0.2em;
+}
+
+.outputResult{
+    padding: 1em;
+}
+
+.pendingTaskCount{
+    font-size: 1.25em;
+    color:#5d4c2e;
+    font-weight: bold;
+    text-decoration:underline;
+}
