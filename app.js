@@ -12,13 +12,15 @@ div.innerHTML = `
 <button class="plus"> + </button>
 
 <ul class="list">
-<ul>
+        
+</ul>
 </div>
 
 
 
 <div class="outputResult"> 
-    <p>You have <span class="pendingTaskCount">0</span> Pending Tasks</p>
+    <span>You have <span class="pendingTaskCount">0</span> Pending Tasks</span>
+    <button> Clear All </button>
 </div>
 `
 document.body.appendChild(div)

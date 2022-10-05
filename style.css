@@ -1,7 +1,7 @@
 :root {
-    --bg-color: #ffe4c4;
+    --bg-color: #c39358;
     --text-color: #463724;
-    --light-text-color:#ffe4c4;
+    --light-text-color: #ffe4c4;
     --heading-text: #221222;
     --font-size: 1.2em
   }
@@ -12,25 +12,24 @@
 *{
     margin: 0;
     padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 
 #container {
     text-align: center;
     background-color: var(--bg-color);
-    max-width: 48em;
+    max-width: 30em;
     margin: 30vh auto;
+    min-height: 25em; 
 }
 
 h1{
     font-size: 4em;
     color: var(--text-color);
 }
-.input-area{
-   border: 1px solid ;
-   min-height: 150px;  
-   margin: 20;
-   max-width: 350px;
+.input-area{ 
+   max-width: 20em;
    margin: 0 auto;
 }
 
@@ -39,21 +38,27 @@ h1{
     padding: 0.5em;
     border: none;
     border-radius: 0.2em;
+    max-width: 11.2em;
     font-size: var(--font-size);
     color: var(--light-text-color);
 }
 
-.plus {
+.plus , button{
     font-size: var(--font-size);
     padding: 0.5em;
     border: none;
     color: var(--text-color);
-    background-color: burlywood;
+    background-color:var(--light-text-color);
     border-radius: 0.2em;
+    max-width: 2em;
+    cursor: pointer;
 }
 
 .outputResult{
-    padding: 1em;
+    padding: 0.5em;
+    max-width: 16em;
+    margin: auto;
+    margin-top: 1em;
 }
 
 .pendingTaskCount{
@@ -61,4 +66,24 @@ h1{
     color:#5d4c2e;
     font-weight: bold;
     text-decoration:underline;
+}
+
+
+li {
+    list-style: none ;
+    font-size: 1.2em;
+    background-color: var(--light-text-color);
+    padding: 0.5em;
+    margin: 0 auto;
+    margin-top: 0.5em;
+    border-radius: 0.2em;
+    text-align: left;
+    border: none;
+    color: var(--text-color);
+    max-width: 13em;
+}
+
+button{
+    max-width: 10em;
+    margin-top: 0.5em;
 }
