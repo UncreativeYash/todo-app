@@ -65,12 +65,32 @@ plusBtn.addEventListener("click", () => {
   localStorage.setItem("New Todo", JSON.stringify(listArr));
 
   let newLiTag = "";
-  listArr.forEach((element) => {
-    newLiTag += `<li> ${element} <img class="delete" src="./images/delete.svg" ></li>`;
+  listArr.forEach((element, index) => {
+    newLiTag += `<li> ${element} <img class="delete" onclick ="deleteTask(${index})" src="./images/delete.svg" ></li>`;
   });
 
   todoList.innerHTML = newLiTag;
 
   //   input filed empty ater adding tasks
-  inputTodo.value = ""
+  inputTodo.value = "";
 });
+
+// Delete individual tasks
+
+function deleteTask(index) {
+  let getLS = localStorage.getItem("New Todo");
+  listArr = JSON.parse(getLS);
+  listArr.splice(index, 1);
+
+  localStorage.setItem("New Todo", JSON.stringify(listArr));
+
+  let newLiTag = "";
+  listArr.forEach((element, index) => {
+    newLiTag += `<li> ${element} <img class="delete" onclick ="deleteTask(${index})" src="./images/delete.svg" ></li>`;
+  });
+
+  todoList.innerHTML = newLiTag;
+
+  //   input filed empty ater adding tasks
+  inputTodo.value = "";
+}
