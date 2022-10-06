@@ -33,6 +33,7 @@ let plusBtn = document.querySelector(".plus");
 let todoList = document.querySelector(".list");
 let clearAll = document.querySelector(".outputResult button");
 let deleteBtn = document.querySelector(".delete");
+let pendingTaskCount = document.querySelector(".pendingTaskCount");
 
 inputTodo.addEventListener("keyup", () => {
   let activePointer = `
@@ -73,6 +74,7 @@ plusBtn.addEventListener("click", () => {
 
   //   input filed empty ater adding tasks
   inputTodo.value = "";
+  pendingTaskCount.textContent = listArr.length
 });
 
 // Delete individual tasks
@@ -93,4 +95,26 @@ function deleteTask(index) {
 
   //   input filed empty ater adding tasks
   inputTodo.value = "";
+  pendingTaskCount.textContent = listArr.length
 }
+
+
+
+// Clear Button
+
+clearAll.addEventListener('click', ()=>{
+  listArr = []
+  localStorage.setItem("New Todo", JSON.stringify(listArr));
+
+  let newLiTag = "";
+  listArr.forEach((element, index) => {
+    newLiTag += `<li> ${element} <img class="delete" onclick ="deleteTask(${index})" src="./images/delete.svg" ></li>`;
+  });
+
+  todoList.innerHTML = newLiTag;
+
+  //   input filed empty ater adding tasks
+  inputTodo.value = "";
+  pendingTaskCount.textContent = listArr.length
+})
+
