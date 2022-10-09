@@ -9,7 +9,7 @@
 - Cannot Add empty tasks
 
 ## What I have Learnt
-- Little use of local storage
+- use of local storage
 - css update using javscript
 - how to strategically think while creating such apps
 
